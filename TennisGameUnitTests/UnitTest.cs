@@ -17,17 +17,17 @@ namespace TennisGameUnitTests
             ushort expectedScoreP1 = 0, expectedScoreP2 = 0;
             Tennis tennisGame = new Tennis();
 
-            Assert.Equals(expectedScoreP1, tennisGame.GetNumScore(PlayerEnum.Player1));
-            Assert.Equals(expectedScoreP2, tennisGame.GetNumScore(PlayerEnum.Player2));
+            Assert.AreEqual(expectedScoreP1, tennisGame.GetNumScore(PlayerEnum.Player1));
+            Assert.AreEqual(expectedScoreP2, tennisGame.GetNumScore(PlayerEnum.Player2));
 
             
             for (int i = 0; i < 6; i++)
             {
                 tennisGame.SetGainedPoint(PlayerEnum.Player1);
-                Assert.Equals(++expectedScoreP1, tennisGame.GetNumScore(PlayerEnum.Player1));
+                Assert.AreEqual(++expectedScoreP1, tennisGame.GetNumScore(PlayerEnum.Player1));
 
                 tennisGame.SetGainedPoint(PlayerEnum.Player2);
-                Assert.Equals(++expectedScoreP2, tennisGame.GetNumScore(PlayerEnum.Player2));
+                Assert.AreEqual(++expectedScoreP2, tennisGame.GetNumScore(PlayerEnum.Player2));
             }
         }
 
