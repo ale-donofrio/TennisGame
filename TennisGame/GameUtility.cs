@@ -8,6 +8,12 @@ namespace TennisGame
 {
     public class GameUtility
     {
+        public const int minPointsToWin = 4;
+        public const int gapToWin = 2;
+        public const int minPointsToDeuce = 3;
+        public const int minPointsToAdvantage = 3;
+        public const int gapToAdvantage = 1;
+
         public static string Deuce = "Deuce";
         public static string Advantage = "Advantage";
 
