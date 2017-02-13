@@ -33,7 +33,7 @@ namespace TennisGame
             throw new NotImplementedException();
         }
 
-        public ScoreEnum GetDescScore(PlayerEnum player1)
+        public string GetDescScore(PlayerEnum player1)
         {
             throw new NotImplementedException();
         }

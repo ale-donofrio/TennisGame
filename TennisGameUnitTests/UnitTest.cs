@@ -109,23 +109,23 @@ namespace TennisGameUnitTests
         public void ScoreDescription()
         {
             Tennis tennisGame = new Tennis();
-            Assert.AreEqual(ScoreEnum.Love, tennisGame.GetDescScore(PlayerEnum.Player1));
+            Assert.AreEqual(Enum.GetName(typeof(ScoreEnum), ScoreEnum.Love), tennisGame.GetDescScore(PlayerEnum.Player1));
             tennisGame.SetGainedPoint(PlayerEnum.Player1);
-            Assert.AreEqual(ScoreEnum.Fifteen, tennisGame.GetDescScore(PlayerEnum.Player1));
+            Assert.AreEqual(Enum.GetName(typeof(ScoreEnum), ScoreEnum.Fifteen), tennisGame.GetDescScore(PlayerEnum.Player1));
             tennisGame.SetGainedPoint(PlayerEnum.Player1);
-            Assert.AreEqual(ScoreEnum.Thirty, tennisGame.GetDescScore(PlayerEnum.Player1));
+            Assert.AreEqual(Enum.GetName(typeof(ScoreEnum), ScoreEnum.Thirty), tennisGame.GetDescScore(PlayerEnum.Player1));
             tennisGame.SetGainedPoint(PlayerEnum.Player1);
-            Assert.AreEqual(ScoreEnum.Forty, tennisGame.GetDescScore(PlayerEnum.Player1));
+            Assert.AreEqual(Enum.GetName(typeof(ScoreEnum), ScoreEnum.Forty), tennisGame.GetDescScore(PlayerEnum.Player1));
 
             tennisGame.StartNewGame();
 
-            Assert.AreEqual(ScoreEnum.Love, tennisGame.GetDescScore(PlayerEnum.Player2));
+            Assert.AreEqual(Enum.GetName(typeof(ScoreEnum), ScoreEnum.Love), tennisGame.GetDescScore(PlayerEnum.Player2));
             tennisGame.SetGainedPoint(PlayerEnum.Player2);
-            Assert.AreEqual(ScoreEnum.Fifteen, tennisGame.GetDescScore(PlayerEnum.Player2));
+            Assert.AreEqual(Enum.GetName(typeof(ScoreEnum), ScoreEnum.Fifteen), tennisGame.GetDescScore(PlayerEnum.Player2));
             tennisGame.SetGainedPoint(PlayerEnum.Player2);
-            Assert.AreEqual(ScoreEnum.Thirty, tennisGame.GetDescScore(PlayerEnum.Player2));
+            Assert.AreEqual(Enum.GetName(typeof(ScoreEnum), ScoreEnum.Thirty), tennisGame.GetDescScore(PlayerEnum.Player2));
             tennisGame.SetGainedPoint(PlayerEnum.Player2);
-            Assert.AreEqual(ScoreEnum.Forty, tennisGame.GetDescScore(PlayerEnum.Player2));
+            Assert.AreEqual(Enum.GetName(typeof(ScoreEnum), ScoreEnum.Forty), tennisGame.GetDescScore(PlayerEnum.Player2));
         }
 
         /// <summary>
