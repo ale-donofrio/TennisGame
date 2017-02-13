@@ -20,7 +20,6 @@ namespace TennisGameUnitTests
             Assert.AreEqual(expectedScoreP1, tennisGame.GetNumScore(PlayerEnum.Player1));
             Assert.AreEqual(expectedScoreP2, tennisGame.GetNumScore(PlayerEnum.Player2));
 
-            
             for (int i = 0; i < 6; i++)
             {
                 tennisGame.SetGainedPoint(PlayerEnum.Player1);
@@ -42,9 +41,10 @@ namespace TennisGameUnitTests
             Tennis tennisGame = new Tennis();
 
             //Player1 Player2 4-0
-            for(i=0; i<4; i++)
+            for (i = 0; i < 4; i++)
             {
                 Assert.AreEqual(false, tennisGame.HasGameEnded());
+                Assert.AreEqual(false, tennisGame.GetTheWinner().HasValue);
                 tennisGame.SetGainedPoint(PlayerEnum.Player1);
             }
             Assert.AreEqual(true, tennisGame.HasGameEnded());
@@ -52,12 +52,22 @@ namespace TennisGameUnitTests
             Assert.AreEqual(true, winner.HasValue);
             Assert.AreEqual(PlayerEnum.Player1, winner.Value);
 
+            //When the game ends, the method SetGainedPoint doesn't increment player's points
+            int p1Points = tennisGame.GetNumScore(PlayerEnum.Player1);
+            tennisGame.SetGainedPoint(PlayerEnum.Player1);
+            Assert.AreEqual(p1Points, tennisGame.GetNumScore(PlayerEnum.Player1));
+
+            int p2Points = tennisGame.GetNumScore(PlayerEnum.Player2);
+            tennisGame.SetGainedPoint(PlayerEnum.Player2);
+            Assert.AreEqual(p2Points, tennisGame.GetNumScore(PlayerEnum.Player2));
+
             tennisGame.StartNewGame();
 
             //Player1 Player2 0-4
             for (i = 0; i < 4; i++)
             {
                 Assert.AreEqual(false, tennisGame.HasGameEnded());
+                Assert.AreEqual(false, tennisGame.GetTheWinner().HasValue);
                 tennisGame.SetGainedPoint(PlayerEnum.Player2);
             }
             Assert.AreEqual(true, tennisGame.HasGameEnded());
