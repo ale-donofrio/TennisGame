@@ -48,7 +48,9 @@ namespace TennisGameUnitTests
                 tennisGame.SetGainedPoint(PlayerEnum.Player1);
             }
             Assert.AreEqual(true, tennisGame.HasGameEnded());
-            Assert.AreEqual(PlayerEnum.Player1, tennisGame.GetTheWinner());
+            PlayerEnum? winner = tennisGame.GetTheWinner();
+            Assert.AreEqual(true, winner.HasValue);
+            Assert.AreEqual(PlayerEnum.Player1, winner.Value);
 
             tennisGame.StartNewGame();
 
@@ -59,7 +61,9 @@ namespace TennisGameUnitTests
                 tennisGame.SetGainedPoint(PlayerEnum.Player2);
             }
             Assert.AreEqual(true, tennisGame.HasGameEnded());
-            Assert.AreEqual(PlayerEnum.Player2, tennisGame.GetTheWinner());
+            winner = tennisGame.GetTheWinner();
+            Assert.AreEqual(true, winner.HasValue);
+            Assert.AreEqual(PlayerEnum.Player2, winner.Value);
 
             tennisGame.StartNewGame();
 
@@ -76,7 +80,9 @@ namespace TennisGameUnitTests
             Assert.AreEqual(false, tennisGame.HasGameEnded());
             tennisGame.SetGainedPoint(PlayerEnum.Player1);
             Assert.AreEqual(true, tennisGame.HasGameEnded());
-            Assert.AreEqual(PlayerEnum.Player1, tennisGame.GetTheWinner());
+            winner = tennisGame.GetTheWinner();
+            Assert.AreEqual(true, winner.HasValue);
+            Assert.AreEqual(PlayerEnum.Player1, winner.Value);
 
             tennisGame.StartNewGame();
 
@@ -97,7 +103,9 @@ namespace TennisGameUnitTests
             Assert.AreEqual(false, tennisGame.HasGameEnded());
             tennisGame.SetGainedPoint(PlayerEnum.Player1);
             Assert.AreEqual(true, tennisGame.HasGameEnded());
-            Assert.AreEqual(PlayerEnum.Player1, tennisGame.GetTheWinner());
+            winner = tennisGame.GetTheWinner();
+            Assert.AreEqual(true, winner.HasValue);
+            Assert.AreEqual(PlayerEnum.Player1, winner.Value);
         }
 
         /// <summary>
