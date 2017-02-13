@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameUtility.cs" />
+    <Compile Include="PlayerEnum.cs" />
+    <Compile Include="ScoreEnum.cs" />
     <Compile Include="Tennis.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
